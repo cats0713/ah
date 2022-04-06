@@ -1,0 +1,1099 @@
+@charset "utf-8";
+
+// @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Work+Sans:wght@300&display=swap');
+@font-face {
+  font-family: 'Cafe24SsurroundAir';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@keyframes moving {
+  0% {
+    transform: perspective(50rem) translateY(1rem) translateZ(0) rotate(0.63turn);
+  }
+  50% {
+    transform: perspective(50rem) translateY(0rem) translateZ(5rem) rotate(0.63turn);
+  }
+  100% {
+    transform: perspective(50rem) translateY(1rem) translateZ(0rem) rotate(0.63turn);
+  }
+}
+@keyframes movingPlanet {
+  0% {
+    transform: translateX(-7rem) translateY(-5rem);
+  }
+  50% {
+    transform: translateX(0rem) translateY(0rem);
+  }
+  100% {
+    transform: translateX(-7rem) translateY(-5rem);
+  }
+}
+@keyframes movingStar {
+  0% {
+    transform: translateX(7rem) translateY(-5rem);
+  }
+  50% {
+    transform: translateX(0rem) translateY(0rem);
+  }
+  100% {
+    transform: translateX(7rem) translateY(-5rem);
+  }
+}
+@keyframes movingX {
+  0% {
+    transform: translateX(-4rem);
+  }
+  50% {
+    transform: translateX(0rem);
+  }
+  100% {
+    transform: translateX(-4rem);
+  }
+}
+@keyframes arrow {
+  0% {
+    transform: translateY(-2rem);
+  }
+  50% {
+    transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}
+@keyframes satellite {
+  0% {
+    transform: translateY(-2rem) rotate(180deg); 
+  }
+  50% {
+    transform: translateY(0rem) rotate(180deg); 
+  }
+  100% {
+    transform: translateY(-2rem) rotate(180deg); 
+  }
+}
+@keyframes fire {
+  0% {
+    transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    box-shadow: 0 0 4rem rgba($color: #fff9d0, $alpha: 1);
+  }
+  50% {
+    transform: perspective(50rem) translateZ(5rem) rotate(0.63turn);
+    box-shadow: 0 0 2em rgba($color: #fff9d0, $alpha: 1);
+  }
+  100% {
+    transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    box-shadow: 0 0 4em rgba($color: #fff9d0, $alpha: 1);
+  }
+}
+@keyframes twinkle {
+  0% {
+    // transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    filter: drop-shadow( 0 0 2rem rgba(255, 253, 144, 0.7)); 
+  }
+  50% {
+    // transform: perspective(50rem) translateZ(5rem) rotate(0.63turn);
+    filter: drop-shadow( 0 0 1rem rgba(255, 253, 144, 0.7)); 
+  }
+  100% {
+    // transform: perspective(50rem) translateZ(0) rotate(0.63turn);
+    filter: drop-shadow( 0 0 2rem rgba(255, 253, 144, 0.7)); 
+  }
+}
+
+$main_black: #1c1c1c;
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: 'Cafe24SsurroundAir';
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(200deg,#6994c3 10%,#952b41 20%,#3a3a8b 40%, #0a0f20 85%, #4d3e76 90%, #cf8caa 95%, #f2f3e1 100%);
+}
+nav{
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+nav:hover{
+  cursor: pointer;
+}
+nav::before{
+  contain: "eb9e";
+
+}
+
+
+section{
+  width: 100%;
+  height: 400rem;
+  // background-color: red;
+}
+
+
+//로켓
+.userBox{
+  position: fixed;
+  top: 40%;
+  left: 46%;
+  animation: arrow 1.5s ease-in-out infinite; 
+  .bodyBox{
+    filter: drop-shadow( 0 0 0.5rem rgba(134, 206, 255, 0.7)); 
+  }
+  .userBody{
+    position: relative;
+    width: 10rem;
+    height: 18rem;
+    background: linear-gradient(200deg, #d2d8f0 60%, #ebedfe 100%);
+    border-top-left-radius: 30rem;
+    border-top-right-radius: 30rem;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+  }
+  .leg1{
+    position: absolute;
+    bottom: -5rem;
+    left: -2rem;
+    width: 3rem;
+    height: 8rem;
+    background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .leg2{
+    position: absolute;
+    bottom:-5rem;
+    left: 50%;
+    margin-left: -1.5rem;
+    width: 3rem;
+    height: 8rem;
+    background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .leg3{
+    position: absolute;
+    bottom: -5rem;
+    right: -2rem;
+    width: 3rem;
+    height: 8rem;
+    background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 3rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .userWindow{
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 1rem solid #929ed5;
+    background: linear-gradient(200deg, #a2aade 60%, #e5e6f9 100%);
+  }
+  .fire{
+    position: absolute;
+    bottom: -4.5rem;
+    left: 50%;
+    margin-left: -3.5rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 1rem;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background: linear-gradient(140deg, #ca732e 20%, #fad90e 100%);
+    animation: fire 2s ease-in-out infinite;
+  } 
+  .cloudBox{
+    position: relative;
+    top: 4rem;
+    [class *= "cloud"]{
+      border-radius: 50%;
+      background-color: white;
+      animation: moving 1s ease-in-out infinite;
+    }
+    .smoke{
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -3.5rem;
+      width: 7rem;
+      height: 10rem;
+      border-radius: 50%;
+      background: linear-gradient(10deg, #fff 60%, #ffffff83 100%);
+    }
+    .cloud1{
+      position: absolute;
+      top: 5rem;
+      left: -3rem;
+      width: 10rem;
+      height: 10rem;
+      animation: moving 2s ease-in-out infinite;
+    }
+    .cloud2{
+      position: absolute;
+      top: 6rem;
+      right: -3rem;
+      width: 11rem;
+      height: 11rem;
+      animation: moving 4s ease-in-out infinite;
+    }
+    .cloud3{
+      position: absolute;
+      top: 3rem;
+      right: 0;
+      width: 6rem;
+      height: 6rem;
+      animation: moving 3s ease-in-out infinite;
+    }
+    .cloud4{
+      position: absolute;
+      top: 3rem;
+      right: 40%;
+      width: 8rem;
+      height: 8rem;
+      animation: moving 2s ease-in-out infinite;
+    }
+    .cloud5{
+      position: absolute;
+      top: 8rem;
+      right: 30%;
+      width: 10rem;
+      height: 10rem;
+    }
+    .cloud6{
+      position: absolute;
+      top: 4rem;
+      right: 4rem;
+      width: 5rem;
+      height: 5rem;
+    }
+    .cloud7{
+      position: absolute;
+      top: 11rem;
+      right: 70%;
+      width: 7rem;
+      height: 7rem;
+    }
+    .cloud8{
+      position: absolute;
+      top: 15rem;
+      right: -3rem;
+      width: 3rem;
+      height: 3rem;
+    }
+    .cloud9{
+      position: absolute;
+      top: 4rem;
+      left: -6rem;
+      width: 2rem;
+      height: 2rem;
+    }
+    .cloud10{
+      position: absolute;
+      top: 4rem;
+      right: -6rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      animation: moving 0.5s ease-in-out infinite;
+    }
+  }
+}
+//우주인
+.meBox{
+  position: fixed;
+  top: 0%;
+  width: 20rem;
+  height: 25rem;
+  background-color: red;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow( 0 0 1rem rgba(0, 0, 0, .7));
+  }
+}
+
+.endPage{
+  width: 100%;
+  height: 400rem;
+  .ah_info{
+    width: 100%;
+    height: 30%;
+    .endPlanet{
+      width: 100%;
+      background-color: red;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.stackPage{
+  width: 100%;
+  height: 400rem;
+
+  .planetBox{
+    position: relative;
+    width: 100%;
+    height: 35%;
+    .planet{
+      position: absolute;
+      bottom: 30%;
+      left: 10%;
+      width: 12rem;
+      height: 12rem;
+      animation: movingX 2s ease-in-out infinite;   
+    }
+    .starImg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: twinkle 2s ease-in-out infinite;  
+    }
+    .cssPlanet{
+      position: relative;
+      width: 80rem;
+      height: 50rem;
+      margin-left: -30%;
+      background-image: url("./IMG/planet/css.svg");
+      .cssBox{
+        width: 100%;
+        height: 100%;
+        .cssFlagImg{
+          opacity: 0;
+          position: absolute;
+          top: -20rem;
+          left: 50%;
+          margin-left: -5rem;
+          width: 10rem;
+          height: 10rem;
+        }
+        svg{
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          margin-top: -7.5rem;
+          margin-left: -7.5rem;
+          width: 15rem;
+          height: 15rem;
+        }
+        h1{
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          margin-left: -10rem;
+          text-align: center;
+          display: inline-block;
+          width: 20rem;
+          font-size: 6rem;
+          color: white;
+        }
+
+      }
+      .scssBox{
+        position: relative;
+        margin-left: 50rem;
+        width: 20rem;
+        height: 20rem;
+        animation: movingPlanet 4s ease-in-out infinite;
+        .scssImg{
+          width: 100%;
+          height: 100%;
+        }
+        svg{
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          margin-left: -2.5rem;
+          width: 5rem;
+          height: 5rem;
+        }
+        h1{
+          position: absolute;
+          bottom: 22%;
+          left: 50%;
+          margin-left: -5rem;
+          text-align: center;
+          display: inline-block;
+          width: 10rem;
+          font-size: 2rem;
+          color: white;
+        }
+      }
+    }
+    .htmlPlanet{
+      position: relative;
+      width: 80rem;
+      height: 50rem;
+      margin-left: 80%;
+      background-image: url("./IMG/planet/end.svg");
+      .htmlBox{
+        width: 100%;
+        height: 100%;
+        .htmlFlagImg{
+          opacity: 0;
+          position: absolute;
+          top: -21rem;
+          left: 50%;
+          margin-left: -5rem;
+          width: 10rem;
+          height: 10rem;
+        }
+        svg{
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          margin-top: -7.5rem;
+          margin-left: -7.5rem;
+          width: 15rem;
+          height: 15rem;
+        }
+        h1{
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          margin-left: -9rem;
+          text-align: center;
+          display: inline-block;
+          width: 20rem;
+          font-size: 6rem;
+          color: white;
+        }
+      }
+      .pugBox{
+        width: 25rem;
+        height: 25rem; 
+        position: relative;
+        margin-left: 10rem;
+        animation: movingPlanet 2s ease-in-out infinite; 
+        img{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        svg{
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          margin-left: -3.5rem;
+          width: 7rem;
+          height: 7rem;
+        }
+        h1{
+          position: absolute;
+          top: 59%;
+          left: 50%;
+          margin-left: -5rem;
+          width: 10rem;
+          text-align: center;
+          display: inline-block;
+          font-size: 2rem;
+          color: white;
+        }
+      }
+    }
+  }
+  .planetBox2{
+    position: relative;
+    width: 100%;
+    height: 35%;
+    .planet{
+      position: absolute;
+      bottom: 30%;
+      left: 10%;
+      width: 12rem;
+      height: 12rem;
+      animation: movingX 2s ease-in-out infinite;   
+    }
+    .starImg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: twinkle 2s ease-in-out infinite;  
+    }
+    .nodejsPlanet{
+      position: relative;
+      width: 80rem;
+      height: 50rem;
+      margin-left: -30%;
+      background-image: url("./IMG/planet/nodejs.svg");
+      .nodeBox{
+        width: 100%;
+        height: 100%;
+        img{
+          opacity: 0;
+          position: absolute;
+          top: -20rem;
+          left: 50%;
+          margin-left: -5rem;
+          width: 10rem;
+          height: 10rem;
+        }
+        svg{
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          margin-top: -7.5rem;
+          margin-left: -7.5rem;
+          width: 15rem;
+          height: 15rem;
+        }
+        h1{
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          margin-left: -10rem;
+          text-align: center;
+          display: inline-block;
+          width: 20rem;
+          font-size: 6rem;
+          color: white;
+        }
+
+      }
+      .express{
+        position: relative;
+        margin-top: -10rem;
+        margin-left: 50rem;
+        width: 20rem;
+        height: 20rem;
+        animation: movingPlanet 4s ease-in-out infinite;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+        svg{
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          margin-left: -2.5rem;
+          width: 5rem;
+          height: 5rem;
+        }
+        h1{
+          position: absolute;
+          bottom: 25%;
+          left: 50%;
+          margin-left: -5rem;
+          text-align: center;
+          display: inline-block;
+          width: 10rem;
+          font-size: 2rem;
+          color: white;
+        }
+      }
+    }
+    .jsPlanet{
+      position: relative;
+      width: 80rem;
+      height: 50rem;
+      margin-left: 80%;
+      background-image: url("./IMG/planet/end.svg");
+      .jsBox{
+        width: 100%;
+        height: 100%;
+        img{
+          opacity: 0;
+          position: absolute;
+          top: -21rem;
+          left: 50%;
+          margin-left: -5rem;
+          width: 10rem;
+          height: 10rem;
+        }
+        svg{
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          margin-top: -7.5rem;
+          margin-left: -7.5rem;
+          width: 15rem;
+          height: 15rem;
+        }
+        h1{
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          margin-left: -9rem;
+          text-align: center;
+          display: inline-block;
+          width: 20rem;
+          font-size: 6rem;
+          color: white;
+        }
+      }
+      .jqueryBox{
+        width: 25rem;
+        height: 25rem;
+        margin-top: -10rem;
+        margin-left: 15rem;
+        position: relative;
+        animation: movingPlanet 2s ease-in-out infinite; 
+        img{
+          position: absolute;
+          top: -30;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        svg{
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          margin-left: -2.5rem;
+          width: 5rem;
+          height: 5rem;
+        }
+        h1{
+          position: absolute;
+          bottom: 25%;
+          left: 50%;
+          margin-left: -5rem;
+          text-align: center;
+          display: inline-block;
+          width: 10rem;
+          font-size: 2rem;
+          color: white;
+        }
+      }
+    }
+  }
+  .moonBox{
+    position: relative;
+    width: 100%;
+    height: 30%;
+    h1{
+      position: absolute;
+      top: 0%;
+      right: 5%;
+      color: #fff;
+      font-size: 3rem;
+    }
+    .blockBox{
+      width: 100%;
+      height: 20%;
+    }
+    .satelliteImg{
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      width: 10rem;
+      height: 10rem;
+      animation: satellite 2s ease-in-out infinite;
+    }
+    .starImg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: twinkle 2s ease-in-out infinite; 
+    }
+
+    .moonPlanet{
+      position: relative;
+      width: 80rem;
+      height: 50rem;
+      margin-left: -30%;
+      background-image: url("./IMG/planet/moon.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: drop-shadow( 0 0 0.3rem rgba(255, 255, 255, 0.7)); 
+    }
+    .rabbitImg{
+      position: absolute;
+      top: -10rem;
+      left: 50%;
+      width: 10rem;
+      height: 13rem;
+      z-index: -1;
+    }
+  }
+}
+
+.introPage{
+  width: 100%;
+  height: 400rem;
+  overflow: hidden;
+  .cloudBox{
+    position: relative;
+    width: 100%;
+    height: 30%;
+    .backgroundStar{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: twinkle 2s ease-in-out infinite; 
+    }
+    .airplane{
+      width: 13rem;
+      height: 13rem;
+      position: absolute;
+      bottom: 35%;
+      left: 70%;
+    }
+    .cloudBack1{
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      opacity: 0.8;
+      width: 70rem;
+      height: 40rem;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .c1{
+        position: absolute;
+        bottom: -4rem;
+        right: 12rem;
+        width: 25rem;
+        height: 25rem;
+        border-radius: 50%;
+        background-color: white;
+      }
+      .c2{
+        position: absolute;
+        bottom: -8rem;
+        left: 16rem;
+        width: 25rem;
+        height: 25rem;
+        border-radius: 50%;
+        background-color: white; 
+      }
+    }
+    .cloudBack2{
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      opacity: 0.8;
+      width: 70rem;
+      height: 40rem;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .c1{
+        position: absolute;
+        bottom: -4rem;
+        right: 12rem;
+        width: 25rem;
+        height: 25rem;
+        border-radius: 50%;
+        background-color: white;
+
+      }
+      .c2{
+        position: absolute;
+        bottom: -8rem;
+        left: 16rem;
+        width: 25rem;
+        height: 25rem;
+        border-radius: 50%;
+        background-color: white; 
+      }
+    }
+  }
+  .introBox{ //intro mainBox
+    width: 100%;
+    height: 50%;
+    position: relative;
+    // background-color: rgba($color: #000000, $alpha: .7);
+    .sunBox{
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      margin-left: -25rem;
+      width: 50rem;
+      height: 50rem;
+      border-radius: 50%;
+      background: linear-gradient(200deg, #f3c77a 30%, #f19d35 100%);
+      filter: drop-shadow( 0 0 5rem rgba(255, 253, 144, 0.7)); 
+    }
+    .hi_ah{
+      margin-left: 65%;
+      .imgBox{
+        width: 30rem;
+        height: 30rem;
+        border-radius: 50%;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .textBox{
+        margin-top: 3rem;
+        h1{
+          font-size: 2rem;
+          letter-spacing: 0.2rem;
+          line-height: 3rem;
+
+        }
+        p{
+          font-size: 1.7em;
+          letter-spacing: 0.2rem;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+  .birdBox{
+    position: relative;
+    width: 18rem;
+    height: 14rem;
+    margin-left: -18rem;
+    transform: rotate(150deg);
+    .bird{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 6rem;
+      color: $main_black;
+    }
+    .bird2{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 4rem;
+      color: $main_black;
+    }
+    .bird3{
+      position: absolute;
+      top: 0;
+      left: 2rem;
+      width: 4rem;
+      color: $main_black;
+    }
+    .bird4{
+      position: absolute;
+      bottom: 0;
+      right: 3rem;
+      width: 3rem;
+      color: $main_black;
+      transform: rotate(-5deg);
+    }
+    .bird5{
+      position: absolute;
+      bottom: 1rem;
+      right: 7rem;
+      width: 4rem;
+      color: $main_black;
+    }
+  }
+  .mountainBox{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    background-image: url("./IMG/mountain/mountain1.svg");
+    background-size: cover;
+    .introGuidance{
+      transform: translateY(10rem);
+      text-align: center;
+      h1{
+        font-size: 3rem;
+        font-weight: 100;
+        color: $main_black;
+        // text-shadow: rgba($color: #000000, $alpha: .7);
+        letter-spacing: 0.3rem;
+        line-height: 3rem;
+      }
+      h2{
+        font-size: 2rem;
+        font-weight: 100;
+        color: #a45d7b;
+        text-shadow: rgba($color: #000000, $alpha: .7);
+        letter-spacing: 0.3rem;
+        line-height: 6rem; 
+      }
+      i{
+        animation: arrow 2s ease-in-out infinite;
+        font-size: 5rem;
+        font-weight: lighter;
+        color: $main_black;
+      }
+    }
+    img{
+      width: 100%;
+      position: absolute;
+      bottom: -17%;
+      z-index: 100;
+      filter: drop-shadow( 0 0 12rem rgba(0, 0, 0, .7));
+    }
+
+  }
+
+}
+
+.infoProjectPage{
+  width: 100%;
+  height: 400rem;
+
+  .ororaBox{
+    width: 100%;
+    height: 60%;
+    position: relative;
+    .starback{ 
+      width: 100%;
+      height: 50%;
+      object-fit: cover;
+      animation: twinkle 1s ease-in-out infinite; 
+    }
+    .dropstar1{
+      position: absolute;
+      top: 30%;
+      left: 20%;
+      width: 6rem;
+      height: 6rem;
+      background-image: url("./IMG/deco/dropstar1.svg");
+      animation: movingStar 1s ease-in-out infinite; 
+    }
+    .dropstar2{
+      position: absolute;
+      bottom: 30%;
+      right: 5%;
+      width: 6rem;
+      height: 6rem;
+      background-image: url("./IMG/deco/dropstar2.svg");
+      animation: arrow 3s ease-in-out infinite;
+    }
+    .dropstar3{
+      position: absolute;
+      bottom: 15%;
+      left: 20%;
+      width: 9rem;
+      height: 9rem;
+      background-image: url("./IMG/deco/dropstar3.svg");
+      animation: movingStar 2s ease-in-out infinite; 
+    }
+    .dropstar4{
+      position: absolute;
+      bottom: 40%;
+      left: 3%;
+      width: 6rem;
+      height: 6rem;
+      background-image: url("./IMG/deco/dropstar2.svg");
+      animation: arrow 1s ease-in-out infinite;
+    }
+    .dropstar5{
+      position: absolute;
+      bottom: 60%;
+      right: 20%;
+      width: 8rem;
+      height: 8rem;
+      background-image: url("./IMG/deco/dropstar3.svg");
+      animation: movingStar 2s ease-in-out infinite; 
+    }
+    .planet1{
+      position: absolute;
+      bottom: 54%;
+      right: 40%;
+      width: 8rem;
+      height: 8rem;
+      background-image: url("./IMG/deco/planet10.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      animation: movingX 2s ease-in-out infinite;  
+    }
+    .planet2{
+      position: absolute;
+      bottom: 30%;
+      left: 10%;
+      width: 6rem;
+      height: 6rem;
+      background-image: url("./IMG/deco/planet8.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      animation: movingX 2s ease-in-out infinite;  
+    }
+    .planet3{
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      width: 10rem;
+      height: 10rem;
+      background-image: url("./IMG/deco/planet3.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      animation: movingStar 3s ease-in-out infinite;  
+    }
+    .planet4{
+      position: absolute;
+      bottom: 6%;
+      right: 80%;
+      width: 8rem;
+      height: 8rem;
+      background-image: url("./IMG/deco/planet11.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      animation: movingX 2s ease-in-out infinite;  
+    }
+    .planet5{
+      position: absolute;
+      top: 6%;
+      right: -10%;
+      width: 40rem;
+      height: 40rem;
+      background-image: url("./IMG/deco/planet9.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      animation: movingX 2s ease-in-out infinite;
+    }
+    .planet6{
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      width: 45rem;
+      height: 45rem;
+      background-image: url("./IMG/deco/planet12.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: rotate(40deg);
+    }
+
+  }
+  .info{
+    width: 100%;
+    height: 40%;
+    
+  }
+}
+
