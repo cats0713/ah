@@ -1,12 +1,14 @@
 window.onload = () => {
+  setTimeout(function() {
+    // console.log(window.scrollTo(0,9980))
+    window.scrollTo(0,10300)
+  }, 70);
   let audio = document.querySelector("#audio");
-  // window.scrollTo({ top: 31161 });
   let displayAH = () => {
     setTimeout(()=>{
       $(".img2").fadeToggle('slow');
-      console.log("a");
       displayAH();
-    },3500);
+    },3000);
   }
   displayAH();
 
@@ -237,6 +239,15 @@ window.onload = () => {
     },
     x:0, y: 0, duration: 3, opacity: 1,
   });
+  gsap.from(".ltsWave", { //아이스
+    scrollTrigger: {
+      trigger: ".ltsWave",
+      // markers: true,
+      start: "top center",
+      scrub: true,
+    },
+    x:0, y: 0, duration: 3, opacity: 1,
+  });
   gsap.from(".gamePlanet", { //아이스
     scrollTrigger: {
       trigger: ".gamePlanet",
@@ -246,15 +257,6 @@ window.onload = () => {
     },
     x:-300, y: 0, duration: 1,
   });
-  // gsap.from(".gameTextBox", { //아이스
-  //   scrollTrigger: {
-  //     trigger: ".gameTextBox",
-  //     // markers: true,
-  //     start: "bottom center",
-  //     scrub: true,
-  //   },
-  //   x:150, y: 0, duration: 1,
-  // });
   gsap.from(".javaPlanet", { //java
     scrollTrigger: {
       trigger: ".javaPlanet",

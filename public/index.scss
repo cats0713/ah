@@ -76,6 +76,17 @@
     transform: translateY(-2rem);
   }
 }
+@keyframes arrow2 {
+  0% {
+    transform: translateY(-1rem);
+  }
+  50% {
+    transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(-1rem);
+  }
+}
 @keyframes satellite {
   0% {
     transform: translateY(-2rem) rotate(180deg); 
@@ -143,7 +154,7 @@ html{
 }
 body{
   width: 100%;
-  // height: 3200rem;
+  height: 100%;
   overflow-x: hidden;
   background: linear-gradient(200deg,#080f24 7%,#151f55 18%, #952b41 23%,#4d3e76 25%,#0a0f20 65%, #0a0f20 85%, #4d3e76 90%, #cf8caa 93%, #f2f3e1 100%);
 }
@@ -402,8 +413,8 @@ nav{
     position: absolute;
     top: 10%;
     left: 73%;
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     transform: rotate(-20deg);
     filter: drop-shadow( 0 0 1rem rgba(255, 49, 49, 0.7));
   }
@@ -435,14 +446,32 @@ nav{
         margin-left: 10%;
         color: #fff;
         h1{
-          font-size: 3rem;
+          font-size: 4rem;
           letter-spacing: 0.3rem;
-          line-height: 4rem;
+          line-height: 5rem;
         }
         p{
-          font-size: 2rem;
+          font-size: 2.5rem;
           letter-spacing: 0.2rem;
-          line-height: 3rem;
+          line-height: 4rem;
+        }
+        .iceBtn{
+          margin-top: 3rem;
+          display: inline-block;
+          text-align: center;
+          width: 21rem;
+          // background-color: red;
+          animation: arrow2 2s ease-in-out infinite;  
+          p{
+            font-size: 3rem;
+            i{
+            font-size: 3rem;
+            }
+          }
+        }
+        .iceBtn:hover{
+          background-color: #6a7eb8;
+          border-radius: 4rem;
         }
       }
       .hi_ah{
@@ -479,15 +508,15 @@ nav{
           margin-top: 3rem;
           color: white;
           h1{
-            font-size: 2.5rem;
+            font-size: 3rem;
             letter-spacing: 0.2rem;
-            line-height: 3rem;
+            line-height: 5rem;
   
           }
           p{
-            font-size: 1.7em;
+            font-size: 2.5em;
             letter-spacing: 0.2rem;
-            line-height: 2rem;
+            line-height: 3.5rem;
           }
         }
       }
@@ -538,7 +567,6 @@ nav{
       }
     }
   }
-
   .mountainBox{
     position: relative;
     width: 100%;
@@ -998,12 +1026,12 @@ nav{
     position: relative;
     width: 100%;
     height: 40%;
-    h1{
+    .techText{
       position: absolute;
       top: 20%;
       right: 5%;
       color: #fff;
-      font-size: 4rem;
+      font-size: 5rem;
     }
     .blockBox{
       width: 100%;
@@ -1074,7 +1102,7 @@ nav{
       position: absolute;
       top: 10%;
       left: 10%; 
-      font-size: 4rem;
+      font-size: 5rem;
       color: white;
     }
     .dropstar1{
@@ -1319,7 +1347,6 @@ nav{
     height: 30%;
     position: relative;
     // background-color: red;
-
     .backgroundStar{
       position: absolute;
       top: 0;
@@ -1361,37 +1388,15 @@ nav{
       .icePageBox{
         position: absolute;
         top: 30rem;
-        left: -50rem;
+        left: -30rem;
         width: 110rem;
         height: 70rem;
-        background-image: url("./IMG/stack/icepage.svg");
         filter: drop-shadow( 0 0 2rem rgba(255, 255, 255, 0.7));
         // background-color: red;
         img{
-          position: absolute;
-          top: 0rem;
-          left: 20em;
           width: 70rem;
           height: 70rem;
-          object-fit: contain;
-        }
-        .iceBtn{
-          display: inline-block;
-          width: 30rem;
-          text-align: center;
-          // background-color: red;
-          position: absolute;
-          top: 13rem;
-          left: 50%;
-          margin-left: -15rem;
-          font-size: 3rem;
-          i{
-            font-size: 3.5rem;
-          }
-        }
-        .iceBtn:hover{
-          background-color: #6a7eb8;
-          border-radius: 3rem;
+          object-fit: cover;
         }
       }
       .iceWaveBox{
@@ -1414,10 +1419,10 @@ nav{
           }
           p{
             margin-top: 1rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #fff;
             letter-spacing: 0.1rem;
-            line-height: 3rem;
+            line-height: 3.5rem;
             text-shadow: 0 0 1rem rgba($color: #000000, $alpha: .7);
           }
           a{
@@ -1436,10 +1441,24 @@ nav{
             border-radius: 1rem;
           }
         }
+        .iceBtn{
+          display: inline-block;
+          text-align: center;
+          animation: arrow2 2s ease-in-out infinite;  
+          // background-color: red;
+          p{
+            font-size: 4rem;
+            i{
+            font-size: 4rem;
+            }
+          }
+        }
+        .iceBtn:hover{
+          background-color: #6a7eb8;
+          border-radius: 3rem;
+        }
       }
     }
-
-
   }
 }
 
@@ -1470,7 +1489,6 @@ nav{
       .planet{
         width: 100%;
         height: 100%;
-        transform: rotate(2100deg);
         filter: drop-shadow( 0 0 12rem rgba(0, 0, 0, .7));
       }
       h1{
@@ -1483,7 +1501,6 @@ nav{
         left: 50%;
         margin-left: -15rem;
         font-size: 4rem;
-        transform: rotate(15deg);
         i{
           font-size: 3.5rem; 
         }
@@ -1493,7 +1510,6 @@ nav{
         bottom: 24rem;
         left: 50%;
         margin-left: -15rem;
-        transform: rotate(15deg);
         font-size: 2rem;
         color: #fff;
         letter-spacing: 0.2rem;
@@ -1974,7 +1990,7 @@ nav{
 
 .endPage{
   width: 100%;
-  height: 400rem;
+  height: 230rem;
   .ah_infoBox{
     width: 100%;
     height: 33%;
@@ -1995,13 +2011,13 @@ nav{
       position: absolute;
       top: 25%;
       left: 50%;
-      width: 66rem;
-      margin-left: -33rem;
+      width: 100rem;
+      margin-left: -50rem;
       color: white;
-
       p{
-        font-size: 3rem;
+        font-size: 4rem;
         text-shadow: 0 0 2rem black;
+        line-height: 6rem;
       }
     }
     .contactBox{
@@ -2054,83 +2070,132 @@ nav{
       }
     }
   }
-  .midleBox{
+  .gamePageBox{
     width: 100%;
-    height: 33%;
+    height: 67%;
+    top: 35rem;
     position: relative;
-    background-image: url("./IMG/back/endback.svg");
-    .wBox{
+    .backgroundStar{
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 100%; 
-      .w1{
-        width: 80rem;
-        position: absolute;
-        bottom: 0;
-        left: -10rem;
-        filter: drop-shadow( 0 0 3rem rgba( rgb(207, 202, 255), 0.3)); 
+      height: 100%;
+      object-fit: cover;
+      // animation: twinkle 2s ease-in-out infinite; 
+    }
+    .iceWaveBox{
+      height: 7rem;
+      position: absolute;
+      top: 35%;
+      left:  3rem;
+      .ltsWave{
+        opacity: 0;
+        h1{
+          font-size: 6rem;
+          color: #fff;
+          letter-spacing: 0.3rem;
+          line-height: 6rem;
+          filter: drop-shadow( 0 0 2rem rgba(255, 255, 255, 0.7));
+          i{
+            font-size: 7rem;
+            vertical-align:sub;
+          }
+        }
+        .iceBtn{
+          display: inline-block;
+          text-align: center;
+          animation: arrow2 2s ease-in-out infinite;  
+          // background-color: red;
+          p{
+            font-size: 4rem;
+            i{
+            font-size: 4rem;
+            }
+          }
+        }
+        p{
+          margin-top: 1rem;
+          font-size: 2.5rem;
+          color: #fff;
+          letter-spacing: 0.1rem;
+          line-height: 3.5rem;
+          text-shadow: 0 0 1rem rgba($color: #000000, $alpha: .7);
+        }
+        a{
+          padding: 0.5rem;
+          display: inline-block;
+          margin-top: 2rem;
+          font-size: 1.7rem;
+          i{
+            font-size: 2.5rem;
+            vertical-align:sub;
+          }
+        }
+        a:hover{
+          cursor: pointer;
+          background-color: #7093f3;
+          border-radius: 1rem;
+        }
       }
     }
-    .f1{
+
+    .gameBox{
       position: absolute;
-      bottom: 0%;
-      left: 10%;
-      width: 5rem;
-      transform: rotate(-30deg);
+      top: 10%;
+      right: -40rem;
+      filter: drop-shadow( 0 0 12rem rgba(0, 0, 0, .7));
+      .gamePlanet{
+        background-image: url("./IMG/deco/planet13.svg");
+        width: 70rem;
+        height: 70rem;
+        position: relative;
+        // background-color: red;
+        transform: rotate(-20deg);
+        p{
+          font-family: 'Courier New', Courier, monospace;
+          position: absolute;
+          top: -15rem;
+          left: 5rem;
+          font-size: 95rem;
+          transform: rotate(90deg);  
+          background: linear-gradient(#ffe139d1 40%,#ff39a3d1 100%);
+          color: transparent;
+          -webkit-background-clip: text;
+        }
+      }
     }
-    .f2{
-      position: absolute;
-      bottom: 40%;
-      left: 60%;
-      width: 5rem;
-      transform: rotate(-30deg); 
-    }
-    .f3{
-      position: absolute;
-      bottom: 40%;
-      left: 40%;
-      width: 5rem;
-      transform: rotate(-30deg); 
-      animation: movingF 10s ease-in-out infinite; 
-    }
-    .f4{
-      position: absolute;
-      bottom: 30%;
-      left: 10%;
-      width: 5rem;
-      transform: rotate(-30deg); 
-    }
-    .f5{
-      position: absolute;
-      bottom: 40%;
-      left: 10%;
-      width: 5rem;
-      transform: rotate(-30deg); 
-      animation: movingF 5s ease-in-out infinite; 
-    }
-    .f6{
-      position: absolute;
-      bottom: 80%;
-      left: 30%;
-      width: 5rem;
-      transform: rotate(-30deg);
-    }
-    .star2{
-      position: absolute;
-      bottom: 20%;
-      left: 30%;
+    .gun{
       width: 10rem;
-      transform: rotate(-90deg);
+      height: 10rem;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      animation: rotate_image 6s linear infinite;
     }
     .star{
-      position: absolute;
-      bottom: 50%;
-      left: 6%;
       width: 15rem;
-      transform: rotate(-30deg);
+      height: 15rem;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      // animation: movingStar 6s linear infinite; 
     }
-  }
-  .webSiteBox{
-    width: 100%;
-    height: 33%;
+    .star2{
+      width: 15rem;
+      height: 15rem;
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      // animation: movingStar 4s linear infinite; 
+    }
+    .comet{
+      width: 10rem;
+      height: 10rem;
+      position: absolute;
+      bottom: 20%;
+      right: 10%;
+      // animation: movingStar 8s linear infinite; 
+    }
   }
 }
