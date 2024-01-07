@@ -1,5 +1,32 @@
 window.onload = () => {
-  // window.scrollTo({ top: 100000 });
+  let audio = document.querySelector("#audio");
+  // window.scrollTo({ top: 31161 });
+  let displayAH = () => {
+    setTimeout(()=>{
+      $(".img2").fadeToggle('slow');
+      console.log("a");
+      displayAH();
+    },3500);
+  }
+  displayAH();
+
+  $(".audioBtn").on("click",()=>{
+    if(audio.paused){
+      $(".audioBtn >i").removeClass('xi-play-circle');
+      $(".audioBtn >i").addClass('xi-pause-circle');
+      audio.play();
+    }else{
+      $(".audioBtn >i").removeClass('xi-pause-circle');
+      $(".audioBtn >i").addClass('xi-play-circle');
+      audio.pause(); 
+    }
+  });
+
+  $(".navBtn").on("click",()=>{
+    // console.log("a");
+    $("nav").fadeToggle("fast");
+  });
+
   gsap.registerPlugin(ScrollTrigger);
   gsap.from(".introGuidance", { //드래그
     scrollTrigger: {
@@ -10,9 +37,9 @@ window.onload = () => {
     },
     x: 0, duration: 1, opacity: 0,
   });
-  gsap.from(".hi_ah", { //자기소개
+  gsap.from(".bigInfoBox", { //자기소개
     scrollTrigger: {
-      trigger: ".hi_ah",
+      trigger: ".bigInfoBox",
       // markers: true,
       start: "center center",
       scrub: true,
@@ -50,7 +77,7 @@ window.onload = () => {
     },
     x: 600, y: 100, duration: 1, opacity: 0,
   });
-  gsap.from(".moonPlanet", { //구름2
+  gsap.from(".moonPlanet", { //달
     scrollTrigger: {
       trigger: ".moonPlanet",
       // markers: true,
@@ -58,7 +85,7 @@ window.onload = () => {
       scrub: true,
       // pin: true,
     },
-    x: 300, y: 100, duration: 1,
+    x: 500, y: 0, duration: 1,
   });
   gsap.from(".airplane", { //비행기
     scrollTrigger: {
@@ -78,7 +105,7 @@ window.onload = () => {
       scrub: true,
       // pin: true,
     },
-    x: 400, y: 100, duration: 1,
+    x: 500, y: 0, duration: 1,
   });
   gsap.from(".htmlPlanet", { //html
     scrollTrigger: {
@@ -114,11 +141,11 @@ window.onload = () => {
     scrollTrigger: {
       trigger: ".nodejsPlanet",
       // markers: true,
-      start: "top center",
+      start: "bottom center",
       scrub: true,
       // pin: true,
     },
-    x: 400, y: 100, duration: 1,
+    x: 300, y: 0, duration: 1,
   });
   gsap.from(".jsPlanet", { //js
     scrollTrigger: {
@@ -150,7 +177,30 @@ window.onload = () => {
     },
     x: 0, y: 150, duration: 1, opacity: 1,
   });
-  gsap.from(".techText", { //저의 테트스택은
+
+  gsap.from(".cPlanet", { //js
+    scrollTrigger: {
+      trigger: ".cPlanet",
+      // markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: -400, y: 100, duration: 1,
+  });
+  gsap.from(".cFlagImg", { //nodeImg
+    scrollTrigger: {
+      trigger: ".cFlagImg",
+      // markers: true,
+      start: "bottom center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 0, y: 150, duration: 1, opacity: 1,
+  });
+  
+
+  gsap.from(".techText", { //저의 테크스택은
     scrollTrigger: {
       trigger: ".techText",
       // markers: true,
@@ -167,10 +217,146 @@ window.onload = () => {
       start: "center center",
       scrub: true,
     },
-    x:0, y: 600, duration: 1,
+    x:0, y: 600, duration: 1, opacity: 0,
+  });
+  gsap.from(".icePageBox", { //아이스
+    scrollTrigger: {
+      trigger: ".icePageBox",
+      // markers: true,
+      start: "bottom center",
+      scrub: true,
+    },
+    x:200, y: 0, duration: 1,
+  });
+  gsap.from(".iceWave", { //아이스
+    scrollTrigger: {
+      trigger: ".iceWave",
+      // markers: true,
+      start: "top center",
+      scrub: true,
+    },
+    x:0, y: 0, duration: 3, opacity: 1,
+  });
+  gsap.from(".gamePlanet", { //아이스
+    scrollTrigger: {
+      trigger: ".gamePlanet",
+      // markers: true,
+      start: "bottom center",
+      scrub: true,
+    },
+    x:-300, y: 0, duration: 1,
+  });
+  // gsap.from(".gameTextBox", { //아이스
+  //   scrollTrigger: {
+  //     trigger: ".gameTextBox",
+  //     // markers: true,
+  //     start: "bottom center",
+  //     scrub: true,
+  //   },
+  //   x:150, y: 0, duration: 1,
+  // });
+  gsap.from(".javaPlanet", { //java
+    scrollTrigger: {
+      trigger: ".javaPlanet",
+      // markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: -400, y: 100, duration: 1,
+  });
+  gsap.from(".javaFlagImg", { //jsImg
+    scrollTrigger: {
+      trigger: ".javaFlagImg",
+      // markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 0, y: 150, duration: 1, opacity: 1,
+  });
+  gsap.from(".mysqlPlanet", { //java
+    scrollTrigger: {
+      trigger: ".mysqlPlanet",
+      // markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 500, y: 100, duration: 1,
+  });
+  gsap.from(".mysqlFlagImg", { //jsImg
+    scrollTrigger: {
+      trigger: ".mysqlFlagImg",
+      // markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 0, y: 150, duration: 1, opacity: 1,
+  });
+  gsap.from(".moviePlanet", { //영화
+    scrollTrigger: {
+      trigger: ".moviePlanet",
+      // markers: true,
+      start: "center center",
+      scrub: true,
+      // pin: true,
+    },
+    x: 500, y: 100, duration: 1,
+  });
+  gsap.from(".alienBox", { //java
+    scrollTrigger: {
+      trigger: ".alienBox",
+      // markers: true,
+      start: "top center",
+      scrub: true,
+      // pin: true,
+    },
+    x: -200, y: 100, duration: 1,
+  });
+  gsap.from(".projectText", { //저의 테트스택은
+    scrollTrigger: {
+      trigger: ".projectText",
+      // markers: true,
+      start: "center center",
+      scrub: true,
+      pin: true,
+    },
+    x: 0, duration: 1, opacity: 0,
+  });
+  gsap.from(".endPlanet", { //java
+    scrollTrigger: {
+      trigger: ".endPlanet",
+      // markers: true,
+      start: "center center",
+      scrub: true,
+    },
+    x: 0, y: 0, duration: 1, opacity: 1,
+  });
+  gsap.from(".wBox", { //고래
+    scrollTrigger: {
+      trigger: ".wBox",
+      // markers: true,
+      start: "bottom bottom",
+      scrub: true,
+    },
+    x: 500, y: -1000, duration: 1, opacity: 0, rotation: -20,
+
   });
 
-
-
 }
-$(window).scroll(function () { var scrollValue = $(document).scrollTop(); console.log(scrollValue); });
+
+$(window).scroll(function () {
+  if($(document).scrollTop() >= 0 && $(document).scrollTop() <= 637){
+    $(".meBox").fadeIn();
+    $(".userBox").stop();
+    $(".userBox").animate({bottom: '-35%'},1000, 'swing');
+  }else if($(document).scrollTop() >= 637 && $(document).scrollTop() <= 1000){
+    $(".meBox").fadeOut();
+    $(".userBox").stop();
+    $(".userBox").animate({bottom: '35%'},1000, 'swing');
+  }
+  var scrollValue = $(document).scrollTop(); 
+  console.log(scrollValue); 
+});
